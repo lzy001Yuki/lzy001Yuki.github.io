@@ -7,20 +7,16 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="程序和进程虚拟化：操作时认为程序在单独运行 进程：程序运行状态随时间的演进 （操作系统会保存一些额外的信息–&gt;syscall）  Q：创建进程导致进程的pid递增，是否会导致pid重用？A：FIFO 回收重用  waitpid():父进程等待其子进程的状态变化，并获取子进程的退出信息。成功时，返回已终止或状态变化的子进程的进程 ID。失败时，返回 -1，并设置 errno 以指示错误原因。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="OperationSystem">
-<meta property="og:url" content="http://example.com/2025/03/27/OperationSystem/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/archives/2025/04/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="程序和进程虚拟化：操作时认为程序在单独运行 进程：程序运行状态随时间的演进 （操作系统会保存一些额外的信息–&gt;syscall）  Q：创建进程导致进程的pid递增，是否会导致pid重用？A：FIFO 回收重用  waitpid():父进程等待其子进程的状态变化，并获取子进程的退出信息。成功时，返回已终止或状态变化的子进程的进程 ID。失败时，返回 -1，并设置 errno 以指示错误原因。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-27T02:40:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T03:31:30.265Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
 
-<title >OperationSystem</title>
+<title >Hexo</title>
 
 <!-- Favicon -->
 
@@ -45,8 +41,6 @@
 
     
     
-<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css">
-
 
 
 
@@ -61,7 +55,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"John Doe","root":"/","typed_text":["I'm Yuki","Welcome to my blog!"],"theme_version":"2.2.4","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","show_text":"Welcome to Yuki's Blog~","hide_text":"-Bye-"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","sticky":"TOP","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"The blog has been lovely to run undefined day"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-03-27 11:31:30"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2025-04-02 10:38:36"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
@@ -198,7 +192,7 @@
     <div class="trm-banner">
     
     <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/window.jpg">
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/figure_bg.jpg">
     <!-- banner cover end -->
     
 
@@ -214,10 +208,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            -notes-
+                            The article archive
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            OperationSystem
+                            永远为新一轮的月亮和日落欢呼
                         </h1>
 
                         
@@ -227,7 +221,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        2025
+                                        archives
                                     </span>
                                 </li>
                             </ul>
@@ -329,116 +323,75 @@
             
             <div class="trm-page-content col-lg-8">
                 <div id="trm-content" class="trm-content">
-                    <div class="trm-post-info row hidden-sm">
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            03/27
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-clock trm-icon"></i><br>
-            10:40
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-user trm-icon"></i><br>
-            Yuki
+                    <div class="row">
+    <div class="col-lg-12">
+        <div class="trm-card">
+            <div style="padding: 0 20px;">
+                
+                    <ul class="trm-tag-list"><li class="trm-tag-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a><span class="archive-list-count">（5）</span></li></ul>
+                
+            </div>
         </div>
     </div>
 </div>
-<div class="trm-card ">
-    <article id="article-container" class="trm-publication">
-    <h2 id="程序和进程"><a href="#程序和进程" class="headerlink" title="程序和进程"></a>程序和进程</h2><p>虚拟化：操作时认为程序在单独运行</p>
-<p>进程：程序运行状态随时间的演进 （操作系统会保存一些额外的信息–&gt;syscall）</p>
-<blockquote>
-<p>Q：创建进程导致进程的pid递增，是否会导致pid重用？<br>A：FIFO 回收重用</p>
-</blockquote>
-<p><code>waitpid()</code>:父进程等待其子进程的状态变化，并获取子进程的退出信息。成功时，返回已终止或状态变化的子进程的进程 ID。失败时，返回 -1，并设置 errno 以指示错误原因。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> <span class="title function_">waitpid</span><span class="params">(<span class="type">pid_t</span> pid, <span class="type">int</span> *status, <span class="type">int</span> options)</span>;</span><br></pre></td></tr></table></figure>
-<p> <code>options</code>: 0 –&gt; 阻塞等待子进程变化<br> <code>pid</code>: -1 –&gt; 所有子进程; &gt;0 –&gt; 特定编号的子进程<br> <code>status</code>：指针，存储子进程的退出状态，可通过宏解析状态（eg.<code>WIFEXITED</code> <code>WEXITSTATUS</code>）</p>
-<h2 id="进程管理API"><a href="#进程管理API" class="headerlink" title="进程管理API"></a>进程管理API</h2><p>unix:<br>复制状态机：fork()<br>– 所有状态的完整拷贝 （复制失败 -1， 成功返回0）<br>– 区分：新进程与原进程是父子关系<br>– fork bomb (OOM进行保护：找到合适的进程并kill)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> x = fork()</span><br><span class="line"><span class="type">pid_t</span> y = fork()</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>创建了几个状态机？<br>调用 $n$ 次 fork()，最终会有 $2^n$ 个进程。</p>
-</blockquote>
-<p>[进程树] – $pstree</p>
-<p>子进程结束通知父进程（$SIGCHLD）</p>
-<blockquote>
-<p>A-&gt;B-&gt;C 如果B提前结束怎么办?<br>孤儿进程的自动收养：当一个进程的父进程终止时，内核会将该进程重新分配给 init（或 systemd）进程作为其新的父进程。这样，孤儿进程不会影响系统的稳定性。 </p>
-</blockquote>
-<p>复位状态机：execve()<br>– 重置为可执行文件的初始状态<br>– 保留进程ID（PID）、文件描述符（除非显式设置 O_CLOEXEC）、信号处理等属性<br>– 唯一能执行程序的系统调用（strace的第一个进程总是execve）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">execve</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* filename, <span class="type">char</span> *<span class="type">const</span> argv[], <span class="type">char</span> * <span class="type">const</span> envp[])</span></span><br><span class="line">\\ argv,envp的最后一个元素均应为<span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<!-- history -->
 
-<h2 id="mmap与进程的地址空间"><a href="#mmap与进程的地址空间" class="headerlink" title="mmap与进程的地址空间"></a>mmap与进程的地址空间</h2><blockquote>
-<p>进程的地址空间从哪来？ </p>
-</blockquote>
-<p>进程的初始状态是由elf文件声明来分配内存的，是否有系统调用可以改变进程的地址空间？</p>
-<p><code>mmap</code>：增加&#x2F;删除&#x2F;修改进程的内存，将文件&#x2F;设备映射到内存中</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">mmap</span><span class="params">(<span class="type">void</span> *addr, <span class="type">size_t</span> length, <span class="type">int</span> prot, <span class="type">int</span> flags, <span class="type">int</span> fd, <span class="type">off_t</span> offset)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>用处：<br>1.申请大内存空间（瞬间完成内存分配）<br>2.映射大文件 ‘Everything is a file’</p>
-<p><code>pmap</code>：查看系统中任意进程的地址空间</p>
-<blockquote>
-<p>Hacking Address Spaces?</p>
-</blockquote>
-
-</article>
-    
-    
-
-</div>
-<div class="trm-post-next-prev row">
+<div class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            Other Articles
-            <span data-number="02"></span>
+            
+                Archive for 2025
+            
+            <span data-number="01"></span>
         </h5>
     </div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2025/03/21/3-21/" class="trm-cover-frame trm-anima-link">
+    <div class="col-lg-12">
+        <!-- timeline -->
+        <div class="trm-timeline">
             
-            
-                <img alt="cover" class="no-fancybox" src="/img/rose.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/thoughts/">
-                    thoughts
-                </a>
+            <div class="trm-timeline-item trm-scroll-animation">
+                <div class="trm-timeline-mark-light"></div>
+                <div class="trm-timeline-mark"></div>
+                <div class="trm-timeline-content more">
+                    
+                        <div class="trm-card-header">
+                            <div class="trm-left-side">
+                                <h6>
+                                    <a href="/2025/04/02/OperationSystem/" class="trm-anima-link">
+                                        OperationSystem
+                                    </a>
+                                </h6>
+                                <div class="trm-text-sm trm-accent-color trm-mt-15">
+                                    <ul class="trm-card-data trm-label ">
+                                        <li class="trm-accent-color">04/02</li>
+                                        <li class="trm-accent-color">10:40</li>
+                                        
+                                        <li>1.1k</li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                </div>
             </div>
-            <h5>
-                <a href="/2025/03/21/3-21/" class="trm-anima-link">
-                    3.21
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>25/03/21</li>
-                <li>17:05</li>
-                
-                    <li>15</li>
-                
-                
-                    <li>1</li>
-                
-            </ul>
+            
         </div>
+        <!-- timeline end -->
     </div>
 </div>
-    
-</div>
 
-    
+<!-- history end -->
+
+
+    <div class="trm-pagination">
+        <span class="page-number current">1</span>
+    </div>
+
+
 
 
 
@@ -480,29 +433,9 @@
 
             
 
-    <div id="post-toc" class="trm-post-toc">
-      <div class="trm-post-toc-header">
-        Article table of contents
-				<span id="post-toc-top">
-					TOP
-				</span>
-      </div>
-      <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="程序和进程"><a rel="nofollow" class="trm-toc-link" href="#程序和进程"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">程序和进程</span></a></li><li class="trm-toc-item trm-toc-level-2" title="进程管理API"><a rel="nofollow" class="trm-toc-link" href="#进程管理API"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">进程管理API</span></a></li><li class="trm-toc-item trm-toc-level-2" title="mmap与进程的地址空间"><a rel="nofollow" class="trm-toc-link" href="#mmap与进程的地址空间"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">mmap与进程的地址空间</span></a></li></ol>
-      </div>
-    </div>
-
             
 <div class="trm-fixed-container">
     
-        <div class="trm-fixed-btn post-toc-btn" data-title="Open toc">
-            <i class="iconfont fas fa-th-list"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
-            <i class="iconfont fas fa-book-reader"></i>
-        </div>
     
     
     <div id="trm-back-top" class="trm-fixed-btn" data-title="Back To Top">
@@ -535,35 +468,8 @@
 
     <!-- 数学公式 -->
     
-        
-<script src="https://unpkg.com/katex@latest/dist/katex.min.js" data-swup-reload-script></script>
-
-        
-            
-<script src="https://unpkg.com/katex@latest/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
-
-        
-        
-<script src="https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
-
-        <script data-swup-reload-script>
-              window.renderMathInElement(document.body, {
-                delimiters: [
-                    { left: '$$', right: '$$', display: true },
-                    { left: '$', right: '$', display: false },
-                    { left: '\\(', right: '\\)', display: false },
-                    { left: '\\[', right: '\\]', display: true },
-                ],
-                ...{},
-            })
-        </script>
-    
 
     <!-- 评论插件 -->
-    
-        
-
-        
     
 
 		
