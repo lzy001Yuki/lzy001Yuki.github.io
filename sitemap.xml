@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lzy001yuki.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzy001yuki.github.io/2025/%E8%AE%B0%E5%8D%8E%E4%B8%BA%E9%9D%A2%E8%AF%95/</loc>
+    
+    <lastmod>2025-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzy001yuki.github.io/about/index.html</loc>
+    
+    <lastmod>2025-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lzy001yuki.github.io/2025/Diary/</loc>
     
     <lastmod>2025-08-09</lastmod>
@@ -12,15 +39,6 @@
   
   <url>
     <loc>https://lzy001yuki.github.io/2025/Toefl/</loc>
-    
-    <lastmod>2025-08-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lzy001yuki.github.io/tags/index.html</loc>
     
     <lastmod>2025-08-08</lastmod>
     
@@ -50,15 +68,6 @@
     <loc>https://lzy001yuki.github.io/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lzy001yuki.github.io/about/index.html</loc>
-    
-    <lastmod>2016-04-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
