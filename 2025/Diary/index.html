@@ -395,7 +395,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">669</span> In Total
+              Words <span class="post-count">807</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -458,7 +458,7 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <blockquote>
-<p>Yuki于2025&#x2F;8&#x2F;9日对Blog进行了重修（当然一部分原因是之前的blogs有些太杂更新太拖沓了，Yuki决心整改hhhh）。仅仅将Toefl备考的部分内容进行了迁移（其他的好像也没什么必要），原因是Yuki还要再考一次QAQ。<br>汇报一下上学期Yuki的Toefl成绩：103（R30,L26,S23,W24）。考虑到上学期拖延症发作只备考了10天，这个成绩倒也情有可原。但是还是需要怒花2100￥刷分。<br>此帖用于记录Yuki日常生活&amp;计划。</p>
+<p>Yuki于2025&#x2F;8&#x2F;9日对Blog进行了重修（当然一部分原因是之前的blogs有些太杂更新太拖沓了，Yuki决心整改hhhh）。仅仅将Toefl备考的部分内容进行了迁移（其他的好像也没什么必要），原因是Yuki还要再考一次QAQ。<br>此帖用于记录Yuki日常生活&amp;计划。</p>
 </blockquote>
 <h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects:"></a>Objects:</h1><ul>
 <li><input disabled="" type="checkbox"> robotics <a target="_blank" rel="noopener" href="https://www.nvidia.cn/training/learning-path/robotics/">Nvidia Courses</a></li>
@@ -477,9 +477,14 @@
 <p>晚上组会，摸清楚了robocasa&#x2F;robomimic&#x2F;robosuite，对要做什么有了大致的概念。</p>
 <h2 id="8-22"><a href="#8-22" class="headerlink" title="8.22"></a>8.22</h2><p>和集群的环境斗智斗勇了一天，麻了</p>
 <p>为什么lc上可以好好的跑，集群上连个.to(device)都在卡，还有各式各样的奇怪问题…</p>
-<h2 id="8-23"><a href="#8-23" class="headerlink" title="8.23"></a>8.23</h2><p>我生气了。就是机器的问题，我就说把神经网络参数传到gpu上怎么能那么慢…</p>
-<p>不过字符串和浮点数的问题还没解决，初步判断是language embedding的问题。</p>
+<h2 id="8-23"><a href="#8-23" class="headerlink" title="8.23"></a>8.23</h2><p>我生气了。就是机器的问题，我就说把神经网络参数传到gpu上怎么能那么慢。不过字符串和浮点数的问题还没解决，初步判断是language embedding的问题。</p>
 <p>好好好，datasets源码被改了（），所以embedding的地方多了一堆字符串…</p>
+<h2 id="8-26"><a href="#8-26" class="headerlink" title="8.26"></a>8.26</h2><p>“能做一辈子的朋友，就不要做一阵子的恋人”</p>
+<p>昨晚来了波回忆杀，也突然理解高三时mx在竞赛教室里那句话的含义了…回旋镖永远最可怕，依稀记得当时还说了句“真的假的，你弄的我都不知道该怎么面对他了。”</p>
+<p>“该怎么做就怎么做呗。”mx当时这么回复我。害，说者轻松，做者不易。</p>
+<p>八年的朋友，也终究要有些隔阂了&#x2F;(ㄒoㄒ)&#x2F;~~</p>
+<p>集群真的好慢，现在两个解决方案：1）写个转化脚本把3000demos裁剪到100demos 2）利用mimicgen重新生成100demos来训练</p>
+<p>准备并行使用这两个方法，毕竟加载这3000个demos也要耗很多时间</p>
 
 
         <hr>
@@ -579,7 +584,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Objects"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Objects:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-15"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">8.15</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-21"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">8.21</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-22"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">8.22</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-23"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">8.23</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Objects"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Objects:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-15"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">8.15</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-21"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">8.21</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-22"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">8.22</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-23"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">8.23</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-26"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">8.26</span></a></li></ol></li></ol>
         
         </div>
       </aside>
