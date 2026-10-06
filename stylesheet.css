@@ -266,6 +266,12 @@ body {
   flex: 0 0 140px;
   display: block;
 }
+.research-featured {
+  background: #fff9df;
+  border-left: 3px solid #e3bd4b;
+  border-radius: 6px;
+  padding: 14px 12px;
+}
 .research-preview img {
   display: block;
   width: 100%;
