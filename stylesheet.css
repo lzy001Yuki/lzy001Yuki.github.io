@@ -144,3 +144,145 @@ span.highlight {
 .profile-photo-shadow {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+body {
+  margin: 0;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+}
+
+.top-nav-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 54px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.top-nav a,
+.top-nav a:hover,
+.top-nav a:focus {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-nav-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: #30343a;
+  flex: none;
+}
+
+.top-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.top-nav-links a {
+  color: #626a73;
+  font-size: 13px;
+}
+
+.top-nav-links a:hover,
+.top-nav-links a:focus {
+  color: #1772d0;
+}
+
+#about, #news, #research, #education, #awards {
+  scroll-margin-top: 70px;
+}
+
+@media (max-width: 600px) {
+  .top-nav-name {
+    display: none;
+  }
+
+  .top-nav-inner {
+    min-height: 48px;
+    padding: 0 12px;
+  }
+
+  .top-nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .top-nav-links a {
+    font-size: 12px;
+  }
+
+  #about, #news, #research, #education, #awards {
+    scroll-margin-top: 64px;
+  }
+
+  .page-shell {
+    table-layout: fixed;
+  }
+
+  .intro-table,
+  .intro-table tbody,
+  .intro-table tr,
+  .intro-table td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .intro-table td {
+    box-sizing: border-box;
+    padding: 0 16px !important;
+  }
+
+  .intro-table td:last-child {
+    text-align: center;
+  }
+
+  .intro-table img {
+    width: 180px !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px;
+  }
+}
+
+/* Paper previews retain their full aspect ratio and open at original size. */
+.research-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 8px 0;
+}
+.research-preview {
+  flex: 0 0 140px;
+  display: block;
+}
+.research-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.research-details {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  .research-entry { gap: 12px; }
+  .research-preview { flex: 0 0 90px; }
+}
+
+.paper-title-blue {
+  color: #1772d0;
+}
