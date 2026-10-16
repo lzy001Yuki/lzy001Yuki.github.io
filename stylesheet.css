@@ -146,10 +146,11 @@ span.highlight {
 }
 
 .news-list {
-  max-height: 15.5rem;
+  box-sizing: border-box;
+  height: 12rem;
   margin: 0;
   padding: 0 14px 0 28px;
-  overflow-y: auto;
+  overflow-y: scroll;
   scrollbar-gutter: stable;
 }
 
