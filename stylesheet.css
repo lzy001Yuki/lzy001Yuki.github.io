@@ -272,9 +272,9 @@ body {
   }
 }
 
-/* Paper previews open at original size; SteerAct stretches to the text height. */
+/* Consistent paper previews; full-size diagrams open when clicked. */
 .research-entry {
-  --research-preview-width: 140px;
+  --research-preview-width: 160px;
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -284,11 +284,7 @@ body {
 .research-preview {
   flex: 0 0 var(--research-preview-width);
   display: block;
-}
-.research-preview-steeract {
-  flex-basis: var(--research-preview-width);
-  align-self: stretch;
-  position: relative;
+  align-self: flex-start;
 }
 .research-featured {
   background: #fff9df;
@@ -299,7 +295,9 @@ body {
 .research-preview img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100px;
+  object-fit: contain;
+  background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 6px;
   box-sizing: border-box;
@@ -310,22 +308,15 @@ body {
 }
 @media (max-width: 640px) {
   .research-entry {
-    --research-preview-width: 90px;
+    --research-preview-width: 96px;
     gap: 12px;
+  }
+
+  .research-preview img {
+    height: 72px;
   }
 }
 
 .paper-title-blue {
   color: #1772d0;
-}
-
-.research-preview-steeract img {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  object-fit: fill;
-}
-
-.research-preview-vista {
-  align-self: center;
 }
