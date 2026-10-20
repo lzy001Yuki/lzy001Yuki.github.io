@@ -320,3 +320,8 @@ body {
 .paper-title-blue {
   color: #1772d0;
 }
+
+.project-list a[href^="https://"]:not(.papertitle)::after {
+  content: " \2197";
+  font-size: 0.8em;
+}
