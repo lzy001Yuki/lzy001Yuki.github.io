@@ -321,6 +321,17 @@ body {
   color: #1772d0;
 }
 
+.spotlight-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid #e3bd4b;
+  border-radius: 4px;
+  background: #fff3bf;
+  color: #705800;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .project-list a[href^="https://"]:not(.papertitle)::after {
   content: " \2197";
   font-size: 0.8em;
