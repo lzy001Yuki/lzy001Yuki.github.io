@@ -18,7 +18,38 @@
   <meta name="description" content="Zhiyan Li（李芷妍）, a computer science undergraduate at Shanghai Jiao Tong University and visiting student at Harvard, researching robot learning and multimodal perception.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const storageKey = 'homepage-theme';
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      } catch {}
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('theme-toggle');
+        const isDark = () => root.dataset.theme
+          ? root.dataset.theme === 'dark'
+          : systemTheme.matches;
+        const updateButton = () => button.setAttribute('aria-pressed', String(isDark()));
+
+        button.addEventListener('click', () => {
+          root.dataset.theme = isDark() ? 'light' : 'dark';
+          try {
+            localStorage.setItem(storageKey, root.dataset.theme);
+          } catch {}
+          updateButton();
+        });
+        systemTheme.addEventListener('change', updateButton);
+        updateButton();
+        button.hidden = false;
+      });
+    })();
+  </script>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=theme">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 </head>
 
@@ -32,6 +63,9 @@
         <a href="#research">Projects</a>
         <a href="#education">Education</a>
         <a href="#awards">Awards</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Dark mode" hidden>
+          <span aria-hidden="true">☾</span>
+        </button>
       </div>
     </div>
   </nav>
